@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Murder Mystery – Case #0420</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="terminal-window">
+    <div class="title-bar">
+      <div class="controls">
+        <span class="btn close"></span>
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+      </div>
+      <span class="title">Case #0420</span>
+    </div>
+
+    <div class="viewport" id="viewport">
+      <div id="output"></div>
+      <div class="input-line">
+        <span id="prompt"></span>
+        <input id="cmd" type="text" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <script src="game-data.js"></script>
+  <script src="terminal.js"></script>
+</body>
+</html>
