@@ -1,0 +1,104 @@
+:root {
+  --bg: #282a36;
+  --bg-dark: #1a1a1a;
+  --fg: #f8f8f2;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
+  --comment: #6272a4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: var(--bg-dark); font-family: 'JetBrains Mono', monospace; overflow: hidden; }
+
+.terminal-window {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  height: 95vh;
+  margin: 2.5vh auto;
+  background: var(--bg);
+  border-radius: 12px;
+  border: 1px solid var(--comment);
+  box-shadow: 0 0 60px var(--purple);
+  overflow: hidden;
+}
+.title-bar {
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: linear-gradient(135deg, #3c3f58, #6272a4);
+  border-bottom: 1px solid var(--comment);
+}
+.controls { display: flex; gap: 8px; }
+.btn {
+  width: 12px; height: 12px; border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover { transform: scale(1.3); box-shadow: 0 0 8px #fff; }
+.btn.close   { background: var(--red); }
+.btn.minimize{ background: var(--yellow); }
+.btn.maximize{ background: var(--green); }
+.title { color: var(--fg); font-weight: 700; text-shadow: 0 0 4px var(--purple); }
+
+.viewport {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 20px;
+  background: var(--bg);
+}
+#output {
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+#prompt {
+  color: var(--cyan);
+  text-shadow: 0 0 3px var(--cyan);
+}
+#cmd {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: var(--pink);
+  text-shadow: 0 0 2px var(--pink);
+}
+
+.viewport::-webkit-scrollbar {
+  width: 8px;
+}
+.viewport::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+.viewport::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--purple), var(--pink), var(--cyan));
+  border-radius: 4px;
+}
+.viewport::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--cyan), var(--green), var(--yellow));
+}
+.viewport {
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple) var(--bg-dark);
+}
